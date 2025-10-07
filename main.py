@@ -8,11 +8,11 @@ class Target:
         else:
             # 画像ないときは色分け円
             color = (240,120,160)
-            if self.kind == "plush": color = (150,180,255)
-            if self.kind == "hako":  color = (240,200,120)
-            if self.kind == "ame":   color = (255,200,140)
-            if self.kind == "gold":  color = (255,230,80)
-            if self.kind == "bomb":  color = (50,50,50)
+            if self.kind == "image/plush": color = (150,180,255)
+            if self.kind == "image/hako":  color = (240,200,120)
+            if self.kind == "image/ame":   color = (255,200,140)
+            if self.kind == "image/gold":  color = (255,230,80)
+            if self.kind == "image/bomb":  color = (50,50,50)
             pygame.draw.circle(surf, color, (int(self.x), int(self.y)), self.radius)
     def __init__(self, kind, x, y, tier, wiggle=3.0):
         self.kind = kind
@@ -217,7 +217,7 @@ try:
 except Exception:
     pass
 try:
-    EMPTY_SOUND = pygame.mixer.Sound(os.path.join(BASE_DIR, "zyuu.mp3"))
+    EMPTY_SOUND = pygame.mixer.Sound(os.path.join(BASE_DIR, "sound/zyuu.mp3"))
 except Exception:
     EMPTY_SOUND = None
 
