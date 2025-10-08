@@ -471,6 +471,8 @@ class Game:
                     self.multiplier[player] = clamp(1.0 + self.combo[player]*0.1, 1.0, 3.0)
                 add = int(base * self.multiplier[player])
                 self.score[player] += add
+                # スコア上限を200に制限
+                self.score[player] = clamp(self.score[player], 0, 200)
                 col = (255,200,140)
                 if t.kind == "candy": col = (255,150,200)
                 if t.kind == "plush": col = (200,200,255)
@@ -572,7 +574,8 @@ class Game:
             self.gameover = True
             self.time_left = 0
             # 2人分のスコアでハイスコア判定（例: 合計点）
-            total_score = sum(self.score)
+            # 合計スコアも上限200×2=400に制限
+            total_score = sum(clamp(s, 0, 200) for s in self.score)
             if total_score > getattr(self, "hiscore", 0):
                 self.hiscore = total_score
                 self.save_hiscore()
