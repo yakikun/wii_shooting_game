@@ -192,12 +192,12 @@ def load_image(name):
         return None
 
 IMAGES = {
-    "candy": load_image("candy.png"),
-    "plush": load_image("plush.png"),
-    "hako":  load_image("hako.png"),
-    "ame":   load_image("ame.png"),
-    "gold":  load_image("gold.png"),   # 任意
-    "bomb":  load_image("bomb.png"),   # 任意
+    "candy": load_image("image/candy.png"),
+    "plush": load_image("image/plush.png"),
+    "hako":  load_image("image/hako.png"),
+    "ame":   load_image("image/ame.png"),
+    "gold":  load_image("image/gold.png"),   # 任意
+    "bomb":  load_image("image/bomb.png"),   # 任意
 }
 
 # ヒット音（任意）
