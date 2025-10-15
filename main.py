@@ -67,8 +67,6 @@ class Target:
             rail_r = PLATFORM_X + PLATFORM_W - 20 - self.radius
             if self.base_x < rail_l or self.base_x > rail_r:
                 self.move_speed *= -1
-                self.base_x = clamp(self.base_x, rail_l, rail_r)
-            self.y = self.base_y
         elif self.falling:
             g = 1200.0
             self.vy += g * dt
